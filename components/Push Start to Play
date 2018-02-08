@@ -1,0 +1,70 @@
+Push Start to Play
+1 player - 2 player
+option to return
+Select Character
+		Amber Mage
+			Beasts
+		Amethyst Mage
+			Death
+		Bright Mage
+			Fire
+		Celestial Mage
+			Heavens
+		Gold Mage
+			Metal
+		Grey Mage
+			Shadow
+		Jade Mage
+			Life
+		White Mage
+			Light
+option to return
+Select third spell/ability
+option to return
+Select Enemy
+		Bray Shaman
+		Chaos Sorcerer
+
+		Grot Shaman
+		Wierdnob Shaman
+
+		Necromancer
+		Vampire
+
+		Moonclan Grot Shaman
+		Wurrgog Prophet
+		
+		Warlock Engineer
+		Grey Seer
+		
+		Skink Priest
+		Slann
+
+		Herald
+		Greater Daemon
+
+option to return
+begin battle
+both players set to 30 health
+start round
+determine priority randomly between two players
+choose spell
+		Arcane Bolt- 5+  X damage to enemy hero
+		Mystic Shield- 6+ Reduces damage taken by X for Y rounds
+roll for results
+		Roll 2d6, add results
+					
+Apply Modifiers to roll
+		Cast successful if result meets casting value or higher
+apply result 
+
+factor buffs
+		Additions or multipliers to damage dealt
+determine result
+
+factor debuffs
+		Subtractions or divisions to damage taken
+apply damage
+		Reduce current health by damage taken
+if a player's health is 0 or lower, game ends
+if neither player's health is 0 or lower, start another round

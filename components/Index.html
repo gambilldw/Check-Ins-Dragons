@@ -1,0 +1,34 @@
+
+<!--d6 -->
+var d6 = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
+
+<!--d3-->
+var d3 = {
+  sides: 3,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
+
+
+button.onclick = function() {
+  var result = d3.roll();
+  printNumber(result);
+};
+
+button.onclick = function() {
+  var result = d6.roll();
+  printNumber(result);
+};
+
+button.onclick = function() {
+  var result = d6.roll() + d6.roll();
+  printNumber(result);
+};
