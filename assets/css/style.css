@@ -1,0 +1,34 @@
+/* Login & Create User Page */
+.container {
+    width: 500px;
+    /* height: 700px; */
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    height: 300px;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#login, #createUser {
+    margin: 20px 0 30px 0;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+}
+
+input[type="text"] {
+    position: relative;
+    left: 148px;
+    margin: 10px 0 10px 0;
+}
+
+/* ============================== */
+
+
