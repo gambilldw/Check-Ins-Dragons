@@ -1,0 +1,13 @@
+.jumbotron {
+    text-align: center;
+    height: 300px;
+    background: url("../images/dragon.jpg");
+}
+
+h1 {
+    text-align: center;
+}
+
+.dropdown-menu {
+    color: black;
+}
