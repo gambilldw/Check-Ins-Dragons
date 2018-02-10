@@ -24,10 +24,11 @@ module.exports = function(app, passport) {
  
     ));
 
-    // app.get('/characterCreation', authController.characterCreation);
-     app.get('/characterCreation', function(req, res){
-res.render("characterCreation")
-     });
+    app.get('/characterCreation', authController.characterCreation);
+
+    app.get('/createUser', authController.createUser);
+
+    app.get('/login', authController.login);
 
     app.get('/dashboard',isLoggedIn, authController.dashboard);
 

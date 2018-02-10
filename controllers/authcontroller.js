@@ -12,9 +12,21 @@ exports.signin = function(req, res) {
  
 }
 
+exports.login = function(req, res) {
+ 
+    res.render('login');
+ 
+}
+
 exports.characterCreation = function(req, res) {
  
     res.render('characterCreation');
+ 
+}
+
+exports.createUser = function(req, res) {
+ 
+    res.render('createUser');
  
 }
 
