@@ -4,7 +4,6 @@ body{
     text-align: center;
     background: url("../images/dragon.jpg") no-repeat center center fixed;
     background-size: cover;
-
 }
 
 .container {
@@ -12,7 +11,15 @@ body{
     /* height: 700px; */
     border: 2px solid white;
     text-align: center;
-    margin-top: 80px;
+    background: url("../images/dragon.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.container {
+    width: 500px;
+    /* height: 700px; */
+    border: 2px solid white;
 }
 
 h1 {
