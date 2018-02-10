@@ -1,25 +1,32 @@
-.jumbotron {
+body{
     text-align: center;
-    height: 300px;
-    background: url("../images/dragon.jpg");
+    background: url("../images/dragon.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 h1 {
+    background: rgba(128, 128, 128, .7);
+}
+
+h1, label {
     text-align: center;
+    color: white;
 }
 
 .btn-group, #enterCreation {
     margin-top: 20px;
 }
 
-form {
-    border: 2px solid black;
-    width: 350px;
+.container {
+    border: 2px solid white;
+    width: 500px;
+    height: 300px;
     text-align: center;
+    margin-top: 80px;
 }
 
 input[type="text"] {
     position: relative;
-    left: 70px;
+    left: 148px;
     margin: 10px 0 10px 0;
 }
