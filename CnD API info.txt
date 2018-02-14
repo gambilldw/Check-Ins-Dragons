@@ -1,0 +1,155 @@
+https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update
+
+http://openweathermap.org/api
+&APPID=7d26f1c4fb5ef56dfd343796b1a0deb9
+
+Google Places API Key
+AIzaSyB64SxCa6YPFHPUQ2ZtEm22gHaLUGW_1Lo
+
+Foursquare API
+
+Client ID
+CNB0D0RUY4NUV4RLEHKPY3UVR14GOIEA1IITSIBCQYOJ34VT
+Client Secret
+K0HJZPJTLKVX1QZ2F4PEC5KL5R321023P25XMKHCTNN4MQGI
+
+Sample Request
+https://api.foursquare.com/v2/users/self?oauth_token=JY0X3FEE2M5VWFBDSGY0IWKTD3EYT5TNOSFV13RDVTO3EGDP&v=20180206
+The OAuth token above is automatically generated for your reference only. Please DO NOT use this token for live applications in production. Instead, click here to create a new app.
+
+Response
+{
+"meta": {
+"code": 200
+"requestId": "5a7a46c64c1f6735b05389b8"
+}
+"notifications": [
+{
+"type": "notificationTray"
+"item": {
+"unreadCount": 0
+}
+}
+]
+"response": {
+"user": {
+"id": "479819298"
+"firstName": "Derek"
+"lastName": "Gambill"
+"gender": "male"
+"relationship": "self"
+"canonicalUrl": "https://foursquare.com/user/479819298"
+"photo": {
+"prefix": "https://igx.4sqi.net/img/user/"
+"suffix": "/blank_boy.png"
+"default": true
+}
+"friends": {
+"count": 0
+"groups": [
+{
+"type": "friends"
+"name": "Mutual friends"
+"count": 0
+"items": [
+]
+}
+{
+"type": "others"
+"name": "Other friends"
+"count": 0
+"items": [
+]
+}
+]
+}
+"birthday": 587347200
+"tips": {
+"count": 0
+}
+"homeCity": "Charlotte, NC"
+"bio": ""
+"contact": {
+"verifiedPhone": "false"
+"email": "gambilldw@gmail.com"
+}
+"photos": {
+"count": 0
+"items": [
+]
+}
+"checkinPings": "off"
+"pings": false
+"type": "user"
+"mayorships": {
+"count": 0
+"items": [
+]
+}
+"checkins": {
+"count": 0
+"items": [
+]
+}
+"requests": {
+"count": 0
+}
+"lists": {
+"count": 2
+"groups": [
+{
+"type": "created"
+"count": 0
+"items": [
+]
+}
+{
+"type": "followed"
+"count": 0
+"items": [
+]
+}
+{
+"type": "yours"
+"count": 2
+"items": [
+"0": {
+"id": "479819298/todos"
+"name": "My Saved Places"
+"description": ""
+"type": "todos"
+"editable": true
+"public": true
+"collaborative": false
+"url": "/user/479819298/list/todos"
+"canonicalUrl": "https://foursquare.com/user/479819298/list/todos"
+"listItems": {
+"count": 0
+}
+}
+"1": {
+"id": "479819298/venuelikes"
+"name": "My Liked Places"
+"description": ""
+"type": "likes"
+"editable": true
+"public": true
+"collaborative": false
+"url": "/user/479819298/list/venuelikes"
+"canonicalUrl": "https://foursquare.com/user/479819298/list/venuelikes"
+"listItems": {
+"count": 0
+}
+}
+]
+}
+]
+}
+"blockedStatus": "none"
+"createdAt": 1517962331
+"lenses": [
+]
+"referralId": "u-479819298"
+}
+}
+}
