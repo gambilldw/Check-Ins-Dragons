@@ -9,7 +9,9 @@ module.exports = function(app, passport) {
     //     let firstName = data[0].dataValues.firstname;
     //     res.render("home", {name : firstName});
     // })
-    res.render("home", {name: "steven"})
+    // console.log(res);
+    res.render('login');
+    // res.render("login", {name: "steven"})
     //query to grab data from db
 
 });
