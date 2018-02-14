@@ -6,11 +6,14 @@ module.exports = function(app, passport) {
     // db.user.findAll({where : {
     //     firstName : "brian"
     // }}).then(function (data) {
+    //     console.log(data)
     //     let firstName = data[0].dataValues.firstname;
     //     res.render("home", {name : firstName});
     // })
     // console.log(res);
     res.render('login');
+    // console.log(res.data);
+
     // res.render("login", {name: "steven"})
     //query to grab data from db
 
