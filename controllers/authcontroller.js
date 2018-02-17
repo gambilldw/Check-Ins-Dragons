@@ -1,35 +1,35 @@
 var exports = module.exports = {}
 
-exports.login = function(req, res) {
-	
+exports.login = function (req, res) {
+
     res.render('login');
- 
+
 }
 
-exports.signup = function(req, res) {
- 	
+exports.signup = function (req, res) {
+
     res.render('signup');
- 
+
 }
 
-exports.characterCreation = function(req, res) {
+exports.characterCreation = function (req, res) {
 
     res.render('characterCreation', { username: req.user.firstname });
- 
+
 }
 
-exports.createUser = function(req, res) {
- 
+exports.createUser = function (req, res) {
+
     res.render('createUser');
- 
+
 }
 
-exports.logout = function(req, res) {
- 
-    req.session.destroy(function(err) {
- 
+exports.logout = function (req, res) {
+
+    req.session.destroy(function (err) {
+
         res.redirect('/');
- 
+
     });
- 
+
 }
