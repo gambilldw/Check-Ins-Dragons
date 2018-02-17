@@ -14,7 +14,7 @@ exports.signup = function(req, res) {
 
 exports.welcome = function(req, res) {
     
-    res.render('welcome');
+    res.render('welcome', { username: req.user.firstname });
  
 }
 
