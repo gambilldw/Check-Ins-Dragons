@@ -12,24 +12,30 @@ exports.signup = function(req, res) {
  
 }
 
-exports.characterCreation = function(req, res) {
+exports.welcome = function(req, res) {
+    
+    res.render('welcome');
+ 
+}
+
+exports.characterCreation = function (req, res) {
 
     res.render('characterCreation', { username: req.user.firstname });
- 
+
 }
 
-exports.createUser = function(req, res) {
- 
+exports.createUser = function (req, res) {
+
     res.render('createUser');
- 
+
 }
 
-exports.logout = function(req, res) {
- 
-    req.session.destroy(function(err) {
- 
+exports.logout = function (req, res) {
+
+    req.session.destroy(function (err) {
+
         res.redirect('/');
- 
+
     });
- 
+
 }
