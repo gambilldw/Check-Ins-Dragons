@@ -50,16 +50,16 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            <a href="#">Human</a>
+                            <a id="human">Human</a>
                         </li>
                         <li>
-                            <a href="#">Elf</a>
+                            <a id="elf">Elf</a>
                         </li>
                         <li>
-                            <a href="#">Dwarf</a>
+                            <a id="dwarf">Dwarf</a>
                         </li>
                         <li>
-                            <a href="#">Halfling</a>
+                            <a id="halfling">Halfling</a>
                         </li>
 
                     </ul>
@@ -76,19 +76,19 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            <a href="#">Soldier</a>
+                            <a id="soldie">Soldier</a>
                         </li>
                         <li>
-                            <a href="#">Warden</a>
+                            <a id="warden">Warden</a>
                         </li>
                         <li>
-                            <a href="#">Ranger</a>
+                            <a id="ranger">Ranger</a>
                         </li>
                         <li>
-                            <a href="#">Invoker</a>
+                            <a id="invoker">Invoker</a>
                         </li>
                         <li>
-                            <a href="#">Vagabond</a>
+                            <a id="vagabond">Vagabond</a>
                         </li>
 
                     </ul>
@@ -116,8 +116,8 @@
 
 <script>
 
-    // $(".dropdown-menu").on('click', 'li a', function () {
-    //    $(this).parent().parent().siblings(".btn:first-child").html($(this).text() + ' <span class="caret"></span>');
-    //    $(this).parent().parent().siblings(".btn:first-child").val($(this).text());
+    $(".dropdown-menu").on('click', 'li a', function () {
+        $(this).parent().parent().siblings(".btn:first-child").html($(this).text() + ' <span class="caret"></span>');
+        $(this).parent().parent().siblings(".btn:first-child").val($(this).text());
 
 </script>
