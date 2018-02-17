@@ -21,6 +21,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             notEmpty: true
         },
+
+        characterHealth: {
+            type: DataTypes.INTEGER,
+            notEmpty: true
+        },
  
         status: {
             type: DataTypes.ENUM('alive', 'dead'),
