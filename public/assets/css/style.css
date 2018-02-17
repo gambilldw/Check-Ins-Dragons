@@ -37,14 +37,14 @@ h1 {
     color: white;
 }
 
-#create, #login, #createUser {
+#create, #login, #createUser, .btn-danger {
     margin: 20px 0 30px 0;
     width: 100px;
     height: 40px;
     padding: 7px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
     position: relative;
     left: 148px;
     margin: 10px 0 10px 0;
