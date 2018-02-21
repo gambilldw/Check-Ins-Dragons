@@ -32,22 +32,22 @@
 
             <h1>Character Creation</h1>
 
-            <form>
+            <form id="createCharacter" name="createCharacter" method="post" action="/createCharacter">
 
                 <label for="charName">Enter Username</label>
 
                 <div class="input-group">
-                    <input type="text" class="form-control" id="charName">
+                    <input type="text" name="charName" class="form-control" id="charName">
                 </div>
 
                 <div class="btn-group">
 
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-primary dropdown-toggle toggle-charRace" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Race
                         <span class="caret"></span>
                     </button>
 
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu charRace">
 
                         <li>
                             <a href="#">Human</a>
@@ -68,12 +68,12 @@
 
                 <div class="btn-group">
 
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-primary dropdown-toggle toggle-charClass" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Class
                         <span class="caret"></span>
                     </button>
 
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu charClass">
 
                         <li>
                             <a href="#">Soldier</a>
@@ -103,8 +103,8 @@
 
         <div class="col-6">
 
-            <!-- <a href="/welcome"><button class="btn btn-primary" id="enterCreation">Next</button></a> -->
-            <a href="/welcome">Next</a>
+            <button type="submit" class="btn btn-primary" id="createChar">Create</button>
+            <!-- <a href="/welcome">Next</a> -->
 
         </div>
 
@@ -116,8 +116,30 @@
 
 <script>
 
-    // $(".dropdown-menu").on('click', 'li a', function () {
-    //    $(this).parent().parent().siblings(".btn:first-child").html($(this).text() + ' <span class="caret"></span>');
-    //    $(this).parent().parent().siblings(".btn:first-child").val($(this).text());
+    $('.charRace li > a').click(function(e){
+        $('.toggle-charRace').text(this.innerHTML);
+    });
+
+    $('.charClass li > a').click(function(e){
+        $('.toggle-charClass').text(this.innerHTML);
+    });
+
+    $("#createChar").on("click", function (event) {
+        event.preventDefault();
+        // Don't do anything if character name not entered.
+        if (!charName.val().trim().trim()) {
+            return;
+        }
+        // var newCharacter = {
+        //     name: $("charName").val().trim(),
+        //     race:
+        //     class:
+        // };
+        upsertChar({
+            characterName: $("charName").val().trim(),
+            characterClass: $("charClass").val().trim(),
+            characterRace: $("charRace").val().trim()
+        });
+    });
 
 </script>
