@@ -11,16 +11,18 @@ module.exports = function (app, passport) {
 
     app.get('/login', authController.login);
 
-    app.get('/logout',authController.logout);
+    app.get('/logout', authController.logout);
 
     app.get('/signup', authController.signup);
 
     app.get('/welcome', authController.welcome);
 
+    app.get('/checkIn', authController.checkIn);
+
     app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect: '/characterCreation',
-            failureRedirect: '/signup'
-        }
+        successRedirect: '/characterCreation',
+        failureRedirect: '/signup'
+    }
 
     ));
 
@@ -33,11 +35,11 @@ module.exports = function (app, passport) {
     });
 
     app.post('/signin', passport.authenticate('local-signin', {
-	        successRedirect: '/characterCreation',
-	        failureRedirect: '/login'
-	    }
+        successRedirect: '/characterCreation',
+        failureRedirect: '/login'
+    }
 
-	));
+    ));
 
     function isLoggedIn(req, res, next) {
 
