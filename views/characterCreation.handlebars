@@ -18,7 +18,7 @@
 
     <div class="col-6">
 
-        <h1 class="h-1">{{username}}, Create A Character</h1>
+        <h1 class="h-1">{{name}}, Create A Character</h1>
 
     </div>
 
@@ -34,7 +34,7 @@
 
             <form>
 
-                <label for="charName">Enter Username</label>
+                <label for="charName">Enter A Username</label>
 
                 <div class="input-group">
                     <input type="text" class="form-control" id="charName">
@@ -50,16 +50,16 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            <a href="#">Human</a>
+                            <a {{characterRace}}>Human</a>
                         </li>
                         <li>
-                            <a href="#">Elf</a>
+                            <a {{characterRace}}>Elf</a>
                         </li>
                         <li>
-                            <a href="#">Dwarf</a>
+                            <a {{characterRace}}>Dwarf</a>
                         </li>
                         <li>
-                            <a href="#">Halfling</a>
+                            <a {{characterRace}}>Halfling</a>
                         </li>
 
                     </ul>
@@ -76,19 +76,19 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            <a href="#">Soldier</a>
+                            <a {{characterClass}}>Soldier</a>
                         </li>
                         <li>
-                            <a href="#">Warden</a>
+                            <a {{characterClass}}>Warden</a>
                         </li>
                         <li>
-                            <a href="#">Ranger</a>
+                            <a {{characterClass}}>Ranger</a>
                         </li>
                         <li>
-                            <a href="#">Invoker</a>
+                            <a {{characterClass}}>Invoker</a>
                         </li>
                         <li>
-                            <a href="#">Vagabond</a>
+                            <a {{characterClass}}>Vagabond</a>
                         </li>
 
                     </ul>
@@ -103,8 +103,7 @@
 
         <div class="col-6">
 
-            <!-- <a href="/welcome"><button class="btn btn-primary" id="enterCreation">Next</button></a> -->
-            <a href="/welcome">Next</a>
+            <a href="/welcome" class="btn btn-primary" id="enterCreation">Next</a>
 
         </div>
 
@@ -116,8 +115,8 @@
 
 <script>
 
-    // $(".dropdown-menu").on('click', 'li a', function () {
-    //    $(this).parent().parent().siblings(".btn:first-child").html($(this).text() + ' <span class="caret"></span>');
-    //    $(this).parent().parent().siblings(".btn:first-child").val($(this).text());
+    $(".dropdown-menu").on('click', 'li a', function () {
+        $(this).parent().parent().siblings(".btn:first-child").html($(this).text() + ' <span class="caret"></span>');
+        $(this).parent().parent().siblings(".btn:first-child").val($(this).text());
 
 </script>
