@@ -26,6 +26,14 @@ module.exports = function (app, passport) {
 
     ));
 
+    // Post route to save character to db.
+    app.post('/createCharacter', function(req, res) {
+        console.log("======================================================================================" + req.body);
+        db.Post.create(req.body).then(function(dbPost) {
+            res.json(dbPost);
+        });
+    });
+
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/characterCreation',
         failureRedirect: '/login'
