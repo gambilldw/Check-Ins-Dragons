@@ -32,7 +32,7 @@
 
             <h1>Character Creation</h1>
 
-            <form id="createCharacter" name="createCharacter" method="post" action="/createCharacter">
+            <form id="createCharacterForm" name="createCharacter" method="post" action="/api/characters">
 
                 <label for="charName">Enter A Username</label>
 
@@ -116,6 +116,12 @@
 
 <script>
 
+$(document).ready(function() {
+
+    var charName = $("#charName");
+
+    $(document).on("submit", "#createCharacterForm", handleCharacterFormSubmit);
+
     $('.charRace li > a').click(function(e){
         $('.toggle-charRace').text(this.innerHTML);
     });
@@ -124,22 +130,39 @@
         $('.toggle-charClass').text(this.innerHTML);
     });
 
-    $("#createChar").on("click", function (event) {
+    // A function to handle what happens when the form is submitted to create a new Character
+    function handleCharacterFormSubmit(event) {
         event.preventDefault();
-        // Don't do anything if character name not entered.
+        // Don't do anything if the name fields hasn't been filled out
         if (!charName.val().trim().trim()) {
-            return;
+          return;
         }
-        // var newCharacter = {
-        //     name: $("charName").val().trim(),
-        //     race:
-        //     class:
-        // };
-        upsertChar({
-            characterName: $("charName").val().trim(),
-            characterClass: $("charClass").val().trim(),
-            characterRace: $("charRace").val().trim()
+        // Calling the upsertCharacter function and passing in the value of the name input
+        upsertCharacter({
+          name: charName
+            .val()
+            .trim()
         });
-    });
+    }
+
+    // A function for creating a character. Calls getCharacters upon completion
+    function upsertCharacter(characterData) {
+        $.post("/api/characters", characterData)
+          // .then(getCharacters);
+    }
+
+    // Function for retrieving characters and getting them ready to be rendered to the page
+    // function getCharacters() {
+    //     $.get("/api/characters", function(data) {
+    //       var rowsToAdd = [];
+    //       for (var i = 0; i < data.length; i++) {
+    //         rowsToAdd.push(createCharacterRow(data[i]));
+    //       }
+    //       renderCharacterList(rowsToAdd);
+    //       charName.val("");
+    //     });
+    // }
+
+});
 
 </script>
