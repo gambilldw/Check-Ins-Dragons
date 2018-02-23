@@ -140,22 +140,19 @@ $(document).ready(function() {
           return;
         }
         // Calling the upsertCharacter function and passing in the value of the name input
+        console.log(charClass.text().trim());
         upsertCharacter(
             {
               characterName: charName
                 .val()
-                .trim()
-            },
-            {
+                .trim(),
               characterClass: charClass
-                .val()
-                .trim()
-            },
-            {
+                .text()
+                .trim(),
               characterRace: charRace
-                .val()
+                .text()
                 .trim()
-            }
+           }
         );
 
     }
@@ -165,6 +162,11 @@ $(document).ready(function() {
         $.post("/api/characters", characterData)
           // .then(getCharacters);
           .then(console.log("good"));
+          // .then(function (req, res) {
+
+          //    res.render('welcome');
+
+          //   })
     }
 
     // Function for retrieving characters and getting them ready to be rendered to the page
