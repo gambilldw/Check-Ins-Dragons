@@ -23,7 +23,6 @@ module.exports = function (app, passport) {
             successRedirect: '/characterCreation',
             failureRedirect: '/signup'
         }
-
     ));
 
     // Get route for getting all character info.
@@ -35,19 +34,18 @@ module.exports = function (app, passport) {
         // Here we add an "include" property to our options in our findAll query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Author
-        db.Post.findAll({
+        db.Character.findAll({
           where: query,
           include: [db.User]
-        }).then(function(dbPost) {
-          res.json(dbPost);
+        }).then(function(dbCharacter) {
+          res.json(dbCharacter);
         });
     });
 
     // Post route to save character to db.
     app.post('/api/characters', function(req, res) {
-        console.log("======================================================================================" + req.body);
-        db.Post.create(req.body).then(function(dbPost) {
-            res.json(dbPost);
+        db.Character.create(req.body).then(function(dbCharacter) {
+            res.json(dbCharacter);
         });
     });
 
@@ -55,7 +53,6 @@ module.exports = function (app, passport) {
             successRedirect: '/characterCreation',
             failureRedirect: '/login'
         }
-
     ));
 
     function isLoggedIn(req, res, next) {

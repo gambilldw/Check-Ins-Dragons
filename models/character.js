@@ -5,17 +5,17 @@ module.exports = function(sequelize, DataTypes) {
         characterName: {
             type: DataTypes.STRING,
             notEmpty: true
+        },
+ 
+        characterClass: {
+            type: DataTypes.STRING,
+            notEmpty: true
+        },
+ 
+        characterRace: {
+            type: DataTypes.STRING,
+            notEmpty: true
         }
- 
-        // characterClass: {
-        //     type: DataTypes.STRING,
-        //     notEmpty: true
-        // },
- 
-        // characterRace: {
-        //     type: DataTypes.STRING,
-        //     notEmpty: true
-        // }
  
         // characterStrength: {
         //     type: DataTypes.INTEGER,

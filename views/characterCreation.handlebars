@@ -32,7 +32,7 @@
 
             <h1>Character Creation</h1>
 
-            <form id="createCharacterForm" name="createCharacter" method="post" action="/api/characters">
+            <form id="createCharacterForm" name="createCharacterForm" method="post" action="/api/characters">
 
                 <label for="charName">Enter A Username</label>
 
@@ -42,7 +42,7 @@
 
                 <div class="btn-group">
 
-                    <button type="button" class="btn btn-primary dropdown-toggle toggle-charRace" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" name="charRace" id="charRace" class="btn btn-primary dropdown-toggle toggle-charRace" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Race
                         <span class="caret"></span>
                     </button>
@@ -68,7 +68,7 @@
 
                 <div class="btn-group">
 
-                    <button type="button" class="btn btn-primary dropdown-toggle toggle-charClass" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" name="charClass" id="charClass" class="btn btn-primary dropdown-toggle toggle-charClass" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Class
                         <span class="caret"></span>
                     </button>
@@ -119,6 +119,8 @@
 $(document).ready(function() {
 
     var charName = $("#charName");
+    var charClass = $("#charClass");
+    var charRace = $("#charRace");
 
     $(document).on("submit", "#createCharacterForm", handleCharacterFormSubmit);
 
@@ -138,30 +140,44 @@ $(document).ready(function() {
           return;
         }
         // Calling the upsertCharacter function and passing in the value of the name input
-        upsertCharacter({
-          name: charName
-            .val()
-            .trim()
-        });
+        upsertCharacter(
+            {
+              characterName: charName
+                .val()
+                .trim()
+            },
+            {
+              characterClass: charClass
+                .val()
+                .trim()
+            },
+            {
+              characterRace: charRace
+                .val()
+                .trim()
+            }
+        );
+
     }
 
     // A function for creating a character. Calls getCharacters upon completion
     function upsertCharacter(characterData) {
         $.post("/api/characters", characterData)
           // .then(getCharacters);
+          .then(console.log("good"));
     }
 
     // Function for retrieving characters and getting them ready to be rendered to the page
-    // function getCharacters() {
-    //     $.get("/api/characters", function(data) {
-    //       var rowsToAdd = [];
-    //       for (var i = 0; i < data.length; i++) {
-    //         rowsToAdd.push(createCharacterRow(data[i]));
-    //       }
-    //       renderCharacterList(rowsToAdd);
-    //       charName.val("");
-    //     });
-    // }
+    function getCharacters() {
+        $.get("/api/characters", function(data) {
+          var rowsToAdd = [];
+          for (var i = 0; i < data.length; i++) {
+            rowsToAdd.push(createCharacterRow(data[i]));
+          }
+          renderCharacterList(rowsToAdd);
+          charName.val("");
+        });
+    }
 
 });
 
