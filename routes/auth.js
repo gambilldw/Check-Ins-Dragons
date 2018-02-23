@@ -20,25 +20,39 @@ module.exports = function (app, passport) {
     app.get('/checkIn', authController.checkIn);
 
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/characterCreation',
-        failureRedirect: '/signup'
-    }
-
+            successRedirect: '/characterCreation',
+            failureRedirect: '/signup'
+        }
     ));
 
+    // Get route for getting all character info.
+    app.get("/api/characters", function(req, res) {
+        var query = {};
+        if (req.query.characterName) {
+          query.CharacterId = req.query.characterName;
+        }
+        // Here we add an "include" property to our options in our findAll query
+        // We set the value to an array of the models we want to include in a left outer join
+        // In this case, just db.Author
+        db.Character.findAll({
+          where: query,
+          include: [db.User]
+        }).then(function(dbCharacter) {
+          res.json(dbCharacter);
+        });
+    });
+
     // Post route to save character to db.
-    app.post('/createCharacter', function(req, res) {
-        console.log("======================================================================================" + req.body);
-        db.Post.create(req.body).then(function(dbPost) {
-            res.json(dbPost);
+    app.post('/api/characters', function(req, res) {
+        db.Character.create(req.body).then(function(dbCharacter) {
+            res.json(dbCharacter);
         });
     });
 
     app.post('/signin', passport.authenticate('local-signin', {
-        successRedirect: '/characterCreation',
-        failureRedirect: '/login'
-    }
-
+            successRedirect: '/characterCreation',
+            failureRedirect: '/login'
+        }
     ));
 
     function isLoggedIn(req, res, next) {
