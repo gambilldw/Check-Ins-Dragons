@@ -36,6 +36,18 @@ exports.checkIn = function (req, res) {
 
 }
 
+exports.location = function (req, res) {
+
+    res.render('location');
+
+}
+
+exports.battle = function (req, res) {
+
+    res.render('battle');
+
+}
+
 exports.logout = function (req, res) {
 
     req.session.destroy(function (err) {

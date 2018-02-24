@@ -42,7 +42,8 @@
 
                 <div class="btn-group">
 
-                    <button type="button" name="charRace" id="charRace" class="btn btn-primary dropdown-toggle toggle-charRace" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" name="charRace" id="charRace" class="btn btn-primary dropdown-toggle toggle-charRace" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Select Race
                         <span class="caret"></span>
                     </button>
@@ -68,7 +69,8 @@
 
                 <div class="btn-group">
 
-                    <button type="button" name="charClass" id="charClass" class="btn btn-primary dropdown-toggle toggle-charClass" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" name="charClass" id="charClass" class="btn btn-primary dropdown-toggle toggle-charClass" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Select Class
                         <span class="caret"></span>
                     </button>
@@ -103,7 +105,7 @@
 
         <div class="col-6">
 
-            <button type="submit" class="btn btn-primary" id="createChar">Create</button>
+            <a class="btn btn-primary" id="enterCreation" href="/welcome">Create</a>
             <!-- <a href="/welcome">Next</a> -->
 
         </div>
@@ -116,71 +118,71 @@
 
 <script>
 
-$(document).ready(function() {
+    $(document).ready(function () {
 
-    var charName = $("#charName");
-    var charClass = $("#charClass");
-    var charRace = $("#charRace");
+        var charName = $("#charName");
+        var charClass = $("#charClass");
+        var charRace = $("#charRace");
 
-    $(document).on("submit", "#createCharacterForm", handleCharacterFormSubmit);
+        $(document).on("submit", "#createCharacterForm", handleCharacterFormSubmit);
 
-    $('.charRace li > a').click(function(e){
-        $('.toggle-charRace').text(this.innerHTML);
-    });
-
-    $('.charClass li > a').click(function(e){
-        $('.toggle-charClass').text(this.innerHTML);
-    });
-
-    // A function to handle what happens when the form is submitted to create a new Character
-    function handleCharacterFormSubmit(event) {
-        event.preventDefault();
-        // Don't do anything if the name fields hasn't been filled out
-        if (!charName.val().trim().trim()) {
-          return;
-        }
-        // Calling the upsertCharacter function and passing in the value of the name input
-        console.log(charClass.text().trim());
-        upsertCharacter(
-            {
-              characterName: charName
-                .val()
-                .trim(),
-              characterClass: charClass
-                .text()
-                .trim(),
-              characterRace: charRace
-                .text()
-                .trim()
-           }
-        );
-
-    }
-
-    // A function for creating a character. Calls getCharacters upon completion
-    function upsertCharacter(characterData) {
-        $.post("/api/characters", characterData)
-          // .then(getCharacters);
-          .then(console.log("good"));
-          // .then(function (req, res) {
-
-          //    res.render('welcome');
-
-          //   })
-    }
-
-    // Function for retrieving characters and getting them ready to be rendered to the page
-    function getCharacters() {
-        $.get("/api/characters", function(data) {
-          var rowsToAdd = [];
-          for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createCharacterRow(data[i]));
-          }
-          renderCharacterList(rowsToAdd);
-          charName.val("");
+        $('.charRace li > a').click(function (e) {
+            $('.toggle-charRace').text(this.innerHTML);
         });
-    }
 
-});
+        $('.charClass li > a').click(function (e) {
+            $('.toggle-charClass').text(this.innerHTML);
+        });
+
+        // A function to handle what happens when the form is submitted to create a new Character
+        function handleCharacterFormSubmit(event) {
+            event.preventDefault();
+            // Don't do anything if the name fields hasn't been filled out
+            if (!charName.val().trim().trim()) {
+                return;
+            }
+            // Calling the upsertCharacter function and passing in the value of the name input
+            console.log(charClass.text().trim());
+            upsertCharacter(
+                {
+                    characterName: charName
+                        .val()
+                        .trim(),
+                    characterClass: charClass
+                        .text()
+                        .trim(),
+                    characterRace: charRace
+                        .text()
+                        .trim()
+                }
+            );
+
+        }
+
+        // A function for creating a character. Calls getCharacters upon completion
+        function upsertCharacter(characterData) {
+            $.post("/api/characters", characterData)
+                // .then(getCharacters);
+                .then(console.log("good"));
+            // .then(function (req, res) {
+
+            //    res.render('welcome');
+
+            //   })
+        }
+
+        // Function for retrieving characters and getting them ready to be rendered to the page
+        function getCharacters() {
+            $.get("/api/characters", function (data) {
+                var rowsToAdd = [];
+                for (var i = 0; i < data.length; i++) {
+                    rowsToAdd.push(createCharacterRow(data[i]));
+                }
+                renderCharacterList(rowsToAdd);
+                charName.val("");
+            });
+        }
+
+    });
 
 </script>

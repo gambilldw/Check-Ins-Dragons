@@ -98,5 +98,18 @@ input[type="text"], input[type="password"] {
     margin-top: 40px;
 }
 
+#locationBtn {
+    margin-bottom: 10px;
+}
+
+#locationPage {
+    margin-top: 10px;
+}
+
+#locationPageLast {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* ============================== */
 

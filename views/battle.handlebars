@@ -1,0 +1,68 @@
+<body style="background-color:silver;">
+    <div class="jumbotron" style="background-color:grey">
+        <h1 class="text-center">Defeat The Enemy!</h1>
+        <div class="text-center">
+            <!-- Health bar-->
+            <h1>
+                <span class="glyphicon glyphicon-heart" style="color:red"></span>
+            </h1>
+            <div id="currentHealthBar" div class="progress center-block" style="width:75%">
+                <div id="currentHealth" div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                    aria-valuemax="10" style="width:100%">
+                </div>
+            </div>
+            <!-- regular attack-->
+            <button id="attackbutton" class="btn btn-outline-secondary btn-lg">
+                <h1>
+                    <img src="https://png.icons8.com/metro/1600/sword.png" width="50" style="color:red">
+                </h1>
+            </button>
+            <!-- heavy attack-->
+            <button id="heavybutton" class="btn btn-outline-secondary btn-lg">
+                <h1>
+                    <img src="https://png.icons8.com/ios-glyphs/50/000000/auction.png" width="50" style="color:red">
+                </h1>
+            </button>
+            <!-- swift attack-->
+            <button id="swiftbutton" class="btn btn-outline-secondary btn-lg">
+                <h1>
+                    <img src="https://png.icons8.com/ios/50/000000/exercise-filled.png" width="50" style="color:red">
+                </h1>
+            </button>
+            <!-- spell attack-->
+            <button id="spellbutton" class="btn btn-outline-secondary btn-lg">
+                <h1>
+                    <img src="https://png.icons8.com/metro/50/000000/fantasy.png" width="50" style="color:red">
+                </h1>
+            </button>
+            <!-- mind attack-->
+            <button id="mindbutton" class="btn btn-outline-secondary btn-lg">
+                <h1>
+                    <img src="https://png.icons8.com/ios/50/000000/brain-filled.png" width="50" style="color:red">
+                </h1>
+            </button>
+            <!--Total Attack roll-->
+            <h1 class="text-center" id="placeholder"></h1>
+            <!--Attack success or failure-->
+            <p id="attackResult"></p>
+            <p id="attackDamage"></p>
+        </div>
+    </div>
+    <div class="jumbotron" style="background-color:grey">
+        <h1 class="text-center">Goblin</h1>
+        <div class="text-center">
+            <!--Enemy Health-->
+            <h1>
+                <span class="glyphicon glyphicon-heart"></span>
+            </h1>
+            <div id="goblinHealthBar" class="progress center-block" style="width:75%">
+                <div id="goblinHealth" class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="10"
+                    aria-valuemin="0" aria-valuemax="10" style="width:100%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/JS/combat.js"></script>
+    </script>
+    <a href="https://icons8.com">Icon pack by Icons8</a>
+</body>
